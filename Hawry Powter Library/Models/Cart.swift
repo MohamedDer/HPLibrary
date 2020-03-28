@@ -29,5 +29,10 @@ class Cart {
         
     }
     
+    func contains(book: Book) -> Bool {
+        return self.books.contains { (cBook) -> Bool in
+            cBook.isbn == book.isbn
+        }
+    }
     
 }

@@ -25,4 +25,23 @@ class AppServices {
             AppServices._booksService = newValue
         }
     }
+    
+    
+    static fileprivate var _cartService: CartService?
+    static var cartService: CartService {
+        get {
+            if let cartService: CartService = AppServices._cartService {
+                return cartService
+            } else {
+                let cartService = CartService()
+                AppServices._cartService = cartService
+                return cartService
+            }
+        }
+        set {
+            AppServices._cartService = newValue
+        }
+    }
+    
+    
 }
