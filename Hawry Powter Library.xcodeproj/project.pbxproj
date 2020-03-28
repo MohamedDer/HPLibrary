@@ -3,27 +3,45 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6371DAC6242F603600145DAB /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371DAC5242F603600145DAB /* Book.swift */; };
+		6371DAC8242F633000145DAB /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371DAC7242F633000145DAB /* File.swift */; };
+		6371DACA242F677E00145DAB /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371DAC9242F677D00145DAB /* CartService.swift */; };
+		6371DACC242F6BC400145DAB /* BooksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371DACB242F6BC400145DAB /* BooksService.swift */; };
 		63CB4A1B242F5A40007015E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CB4A1A242F5A40007015E0 /* AppDelegate.swift */; };
 		63CB4A1D242F5A40007015E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CB4A1C242F5A40007015E0 /* SceneDelegate.swift */; };
-		63CB4A1F242F5A40007015E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CB4A1E242F5A40007015E0 /* ViewController.swift */; };
+		63CB4A1F242F5A40007015E0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CB4A1E242F5A40007015E0 /* MainViewController.swift */; };
 		63CB4A22242F5A40007015E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63CB4A20242F5A40007015E0 /* Main.storyboard */; };
 		63CB4A24242F5A42007015E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63CB4A23242F5A42007015E0 /* Assets.xcassets */; };
 		63CB4A27242F5A42007015E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63CB4A25242F5A42007015E0 /* LaunchScreen.storyboard */; };
+		63F62835242F773C00270C7B /* MainViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F62834242F773C00270C7B /* MainViewController+UITableView.swift */; };
+		63F6283A242F7A4C00270C7B /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F62838242F7A4C00270C7B /* BookTableViewCell.swift */; };
+		63F6283B242F7A4C00270C7B /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63F62839242F7A4C00270C7B /* BookTableViewCell.xib */; };
+		CC57A6B8D4A2047ACE749660 /* Pods_Hawry_Powter_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA7F5D2A55B5D1BCB42FE98 /* Pods_Hawry_Powter_Library.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2EA7F5D2A55B5D1BCB42FE98 /* Pods_Hawry_Powter_Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hawry_Powter_Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6371DAC5242F603600145DAB /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		6371DAC7242F633000145DAB /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		6371DAC9242F677D00145DAB /* CartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartService.swift; sourceTree = "<group>"; };
+		6371DACB242F6BC400145DAB /* BooksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksService.swift; sourceTree = "<group>"; };
 		63CB4A17242F5A40007015E0 /* Hawry Powter Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hawry Powter Library.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63CB4A1A242F5A40007015E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63CB4A1C242F5A40007015E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		63CB4A1E242F5A40007015E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		63CB4A1E242F5A40007015E0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		63CB4A21242F5A40007015E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63CB4A23242F5A42007015E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63CB4A26242F5A42007015E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63CB4A28242F5A42007015E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63F62834242F773C00270C7B /* MainViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+UITableView.swift"; sourceTree = "<group>"; };
+		63F62838242F7A4C00270C7B /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
+		63F62839242F7A4C00270C7B /* BookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookTableViewCell.xib; sourceTree = "<group>"; };
+		64F24649A01C1551D638B939 /* Pods-Hawry Powter Library.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hawry Powter Library.release.xcconfig"; path = "Target Support Files/Pods-Hawry Powter Library/Pods-Hawry Powter Library.release.xcconfig"; sourceTree = "<group>"; };
+		9E7712ABB38EC1D7BB257AF3 /* Pods-Hawry Powter Library.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hawry Powter Library.debug.xcconfig"; path = "Target Support Files/Pods-Hawry Powter Library/Pods-Hawry Powter Library.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +49,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC57A6B8D4A2047ACE749660 /* Pods_Hawry_Powter_Library.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6371DAC2242F5F7700145DAB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6371DAC5242F603600145DAB /* Book.swift */,
+				6371DAC7242F633000145DAB /* File.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6371DAC3242F5F8500145DAB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6371DAC9242F677D00145DAB /* CartService.swift */,
+				6371DACB242F6BC400145DAB /* BooksService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6371DAC4242F5FAB00145DAB /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				63CB4A1E242F5A40007015E0 /* MainViewController.swift */,
+				63F62834242F773C00270C7B /* MainViewController+UITableView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		63CB4A0E242F5A40007015E0 = {
 			isa = PBXGroup;
 			children = (
 				63CB4A19242F5A40007015E0 /* Hawry Powter Library */,
 				63CB4A18242F5A40007015E0 /* Products */,
+				BA1EDE3F89692A9309B81DBE /* Pods */,
+				DDE2887176AA0DEA60EF9751 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +104,52 @@
 		63CB4A19242F5A40007015E0 /* Hawry Powter Library */ = {
 			isa = PBXGroup;
 			children = (
+				63F62836242F779800270C7B /* Reusable Views */,
+				6371DAC4242F5FAB00145DAB /* Screens */,
+				6371DAC3242F5F8500145DAB /* Services */,
+				6371DAC2242F5F7700145DAB /* Models */,
 				63CB4A1A242F5A40007015E0 /* AppDelegate.swift */,
 				63CB4A1C242F5A40007015E0 /* SceneDelegate.swift */,
-				63CB4A1E242F5A40007015E0 /* ViewController.swift */,
 				63CB4A20242F5A40007015E0 /* Main.storyboard */,
 				63CB4A23242F5A42007015E0 /* Assets.xcassets */,
 				63CB4A25242F5A42007015E0 /* LaunchScreen.storyboard */,
 				63CB4A28242F5A42007015E0 /* Info.plist */,
 			);
 			path = "Hawry Powter Library";
+			sourceTree = "<group>";
+		};
+		63F62836242F779800270C7B /* Reusable Views */ = {
+			isa = PBXGroup;
+			children = (
+				63F62837242F77A600270C7B /* BookTableViewCell */,
+			);
+			path = "Reusable Views";
+			sourceTree = "<group>";
+		};
+		63F62837242F77A600270C7B /* BookTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				63F62838242F7A4C00270C7B /* BookTableViewCell.swift */,
+				63F62839242F7A4C00270C7B /* BookTableViewCell.xib */,
+			);
+			path = BookTableViewCell;
+			sourceTree = "<group>";
+		};
+		BA1EDE3F89692A9309B81DBE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E7712ABB38EC1D7BB257AF3 /* Pods-Hawry Powter Library.debug.xcconfig */,
+				64F24649A01C1551D638B939 /* Pods-Hawry Powter Library.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DDE2887176AA0DEA60EF9751 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2EA7F5D2A55B5D1BCB42FE98 /* Pods_Hawry_Powter_Library.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63CB4A2B242F5A42007015E0 /* Build configuration list for PBXNativeTarget "Hawry Powter Library" */;
 			buildPhases = (
+				2EA8CE6289F72052F2FC55D6 /* [CP] Check Pods Manifest.lock */,
 				63CB4A13242F5A40007015E0 /* Sources */,
 				63CB4A14242F5A40007015E0 /* Frameworks */,
 				63CB4A15242F5A40007015E0 /* Resources */,
+				23C5FDDCB75CCE28E65C3D4F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63F6283B242F7A4C00270C7B /* BookTableViewCell.xib in Resources */,
 				63CB4A27242F5A42007015E0 /* LaunchScreen.storyboard in Resources */,
 				63CB4A24242F5A42007015E0 /* Assets.xcassets in Resources */,
 				63CB4A22242F5A40007015E0 /* Main.storyboard in Resources */,
@@ -133,14 +221,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		23C5FDDCB75CCE28E65C3D4F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hawry Powter Library/Pods-Hawry Powter Library-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hawry Powter Library/Pods-Hawry Powter Library-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hawry Powter Library/Pods-Hawry Powter Library-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2EA8CE6289F72052F2FC55D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hawry Powter Library-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		63CB4A13242F5A40007015E0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63CB4A1F242F5A40007015E0 /* ViewController.swift in Sources */,
+				6371DAC8242F633000145DAB /* File.swift in Sources */,
+				6371DAC6242F603600145DAB /* Book.swift in Sources */,
+				63CB4A1F242F5A40007015E0 /* MainViewController.swift in Sources */,
+				6371DACC242F6BC400145DAB /* BooksService.swift in Sources */,
+				63F6283A242F7A4C00270C7B /* BookTableViewCell.swift in Sources */,
+				6371DACA242F677E00145DAB /* CartService.swift in Sources */,
 				63CB4A1B242F5A40007015E0 /* AppDelegate.swift in Sources */,
 				63CB4A1D242F5A40007015E0 /* SceneDelegate.swift in Sources */,
+				63F62835242F773C00270C7B /* MainViewController+UITableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +418,7 @@
 		};
 		63CB4A2C242F5A42007015E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E7712ABB38EC1D7BB257AF3 /* Pods-Hawry Powter Library.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +437,7 @@
 		};
 		63CB4A2D242F5A42007015E0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64F24649A01C1551D638B939 /* Pods-Hawry Powter Library.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
