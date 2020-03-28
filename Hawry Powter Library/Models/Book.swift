@@ -16,7 +16,7 @@ class Book: Mappable {
     var title: String?
     var price: Int?
     var coverURLString: String?
-    var synopsys: [String]?
+    var synopsis: [String]?
 
     
     func mapping(map: Map) {
@@ -24,7 +24,7 @@ class Book: Mappable {
         title    <- map["title"]
         price    <- map["price"]
         coverURLString    <- map["cover"]
-        synopsys    <- map["synopsys"]
+        synopsis    <- map["synopsis"]
     }
 
     required init?(map: Map) {
