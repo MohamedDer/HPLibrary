@@ -71,6 +71,14 @@ class BookTableViewCell: UITableViewCell {
             showPromptWith(message: "Book added")
 
         }
+        
+        //
+        
+         AppServices.cartService.getDiscounts {
+            let ds = AppServices.cartService.discounts
+            print(ds)
+        }
+        
     }
     
     @IBAction func removeFromCart(_ sender: Any) {

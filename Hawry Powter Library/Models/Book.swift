@@ -29,8 +29,5 @@ class Book: Mappable {
 
     required init?(map: Map) {
     }
-    
-    
-    
-    
+
 }
