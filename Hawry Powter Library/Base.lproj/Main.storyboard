@@ -18,14 +18,24 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uJM-6M-nD0">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <inset key="scrollIndicatorInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="bookTableViewCell" id="Bwo-Q1-V0U" customClass="BookTableViewCell" customModule="Hawry_Powter_Library" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bwo-Q1-V0U" id="ZhF-Ve-oax">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4x3-Bf-N6W">
-                                <rect key="frame" x="70" y="772" width="274" height="70"/>
+                                <rect key="frame" x="70" y="782" width="274" height="70"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="6lv-0a-fmO"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="27"/>
                                 <color key="tintColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Check Cart"/>
                             </button>
@@ -35,7 +45,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uJM-6M-nD0" secondAttribute="trailing" id="76T-en-l0T"/>
                             <constraint firstItem="uJM-6M-nD0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="AaW-pQ-MWi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4x3-Bf-N6W" secondAttribute="trailing" constant="70" id="Axr-GM-IfP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4x3-Bf-N6W" secondAttribute="bottom" constant="20" id="ohh-Ce-xLc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4x3-Bf-N6W" secondAttribute="bottom" constant="10" id="ohh-Ce-xLc"/>
                             <constraint firstItem="uJM-6M-nD0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pn8-WM-cdh"/>
                             <constraint firstItem="4x3-Bf-N6W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="qRE-WR-ubn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uJM-6M-nD0" secondAttribute="bottom" id="tgz-rE-lXy"/>

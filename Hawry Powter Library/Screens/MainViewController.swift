@@ -16,13 +16,16 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupTableView()
+        cartButton.layer.cornerRadius = cartButton.frame.height / 2
         //TO DO: Make an App Services to group all services
         let bs = BooksService().sharedBooksService
         bs.fetchBooks {
-            print(bs.getBooks()?.last?.title)
+            if let books = bs.getBooks() {
+                self.books = books
+            }
+            self.tableView.reloadData()
         }
-        
         //set loader
         
     }
