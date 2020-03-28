@@ -16,6 +16,7 @@ class BookTableViewCell: UITableViewCell {
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var synopsisLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var removeButton: UIButton!
@@ -50,6 +51,7 @@ class BookTableViewCell: UITableViewCell {
         self.book = book
         synopsisLabel.text = book.synopsis?.first
         titleLabel.text = book.title
+        priceLabel.text = "\(book.price!) £"
         if let urlString = book.coverURLString {
             setupImageWith(URLString: urlString)
         }
