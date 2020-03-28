@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6371DAC6242F603600145DAB /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371DAC5242F603600145DAB /* Book.swift */; };
-		6371DAC8242F633000145DAB /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371DAC7242F633000145DAB /* File.swift */; };
+		6371DAC8242F633000145DAB /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371DAC7242F633000145DAB /* Cart.swift */; };
 		6371DACA242F677E00145DAB /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371DAC9242F677D00145DAB /* CartService.swift */; };
 		6371DACC242F6BC400145DAB /* BooksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371DACB242F6BC400145DAB /* BooksService.swift */; };
 		63948C55242FAE3800164C86 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63948C54242FAE3800164C86 /* AppServices.swift */; };
@@ -27,7 +27,7 @@
 /* Begin PBXFileReference section */
 		2EA7F5D2A55B5D1BCB42FE98 /* Pods_Hawry_Powter_Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hawry_Powter_Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6371DAC5242F603600145DAB /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
-		6371DAC7242F633000145DAB /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		6371DAC7242F633000145DAB /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		6371DAC9242F677D00145DAB /* CartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartService.swift; sourceTree = "<group>"; };
 		6371DACB242F6BC400145DAB /* BooksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksService.swift; sourceTree = "<group>"; };
 		63948C54242FAE3800164C86 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				6371DAC5242F603600145DAB /* Book.swift */,
-				6371DAC7242F633000145DAB /* File.swift */,
+				6371DAC7242F633000145DAB /* Cart.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -271,7 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6371DAC8242F633000145DAB /* File.swift in Sources */,
+				6371DAC8242F633000145DAB /* Cart.swift in Sources */,
 				6371DAC6242F603600145DAB /* Book.swift in Sources */,
 				63CB4A1F242F5A40007015E0 /* MainViewController.swift in Sources */,
 				6371DACC242F6BC400145DAB /* BooksService.swift in Sources */,

@@ -26,31 +26,52 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="KcP-rL-AJ7">
-                                <rect key="frame" x="95" y="5" width="233" height="91"/>
+                                <rect key="frame" x="95" y="5" width="249" height="91"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Hkj-5M-vqA">
-                                        <rect key="frame" x="0.0" y="0.0" width="233" height="46.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="249" height="46.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="an0-lE-iqh">
-                                        <rect key="frame" x="0.0" y="46.5" width="233" height="44.5"/>
+                                        <rect key="frame" x="0.0" y="46.5" width="249" height="44.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LCQ-UB-2Bz">
+                                <rect key="frame" x="344" y="10" width="39" height="81"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLA-9c-SN0">
+                                        <rect key="frame" x="0.0" y="0.0" width="39" height="40.5"/>
+                                        <connections>
+                                            <action selector="addToCart:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="zjc-QE-QA9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffI-ME-FqC">
+                                        <rect key="frame" x="0.0" y="40.5" width="39" height="40.5"/>
+                                        <connections>
+                                            <action selector="removeFromCart:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xn0-1w-jLH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="LCQ-UB-2Bz" firstAttribute="width" secondItem="3ln-Zi-Qcf" secondAttribute="width" multiplier="0.1" id="1NQ-fp-ijY"/>
                             <constraint firstItem="KcP-rL-AJ7" firstAttribute="leading" secondItem="7bp-Uc-PE4" secondAttribute="trailing" constant="10" id="9NK-S2-yxP"/>
                             <constraint firstAttribute="bottom" secondItem="7bp-Uc-PE4" secondAttribute="bottom" constant="5" id="DgZ-jD-hjN"/>
-                            <constraint firstItem="KcP-rL-AJ7" firstAttribute="width" secondItem="3ln-Zi-Qcf" secondAttribute="width" multiplier="0.6" id="K2Z-xg-8Y0"/>
+                            <constraint firstItem="LCQ-UB-2Bz" firstAttribute="leading" secondItem="KcP-rL-AJ7" secondAttribute="trailing" id="LrG-rz-a38"/>
                             <constraint firstItem="KcP-rL-AJ7" firstAttribute="top" secondItem="3ln-Zi-Qcf" secondAttribute="top" constant="5" id="XKU-BS-N6V"/>
+                            <constraint firstItem="LCQ-UB-2Bz" firstAttribute="top" secondItem="3ln-Zi-Qcf" secondAttribute="top" constant="10" id="bC7-di-J74"/>
                             <constraint firstItem="7bp-Uc-PE4" firstAttribute="top" secondItem="3ln-Zi-Qcf" secondAttribute="top" constant="5" id="bNh-Cw-xkT"/>
                             <constraint firstItem="7bp-Uc-PE4" firstAttribute="leading" secondItem="3ln-Zi-Qcf" secondAttribute="leading" constant="5" id="h8D-8F-V4C"/>
+                            <constraint firstAttribute="bottom" secondItem="LCQ-UB-2Bz" secondAttribute="bottom" constant="10" id="mce-JA-r9a"/>
+                            <constraint firstAttribute="trailing" secondItem="LCQ-UB-2Bz" secondAttribute="trailing" constant="5" id="rUe-hH-v5j"/>
                             <constraint firstAttribute="bottom" secondItem="KcP-rL-AJ7" secondAttribute="bottom" constant="5" id="sVq-nl-Qr1"/>
                         </constraints>
                     </view>
@@ -64,8 +85,10 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="addButton" destination="PLA-9c-SN0" id="3RV-Es-yfm"/>
                 <outlet property="containerView" destination="3ln-Zi-Qcf" id="2Qb-Tv-G5m"/>
                 <outlet property="coverImageView" destination="7bp-Uc-PE4" id="ygZ-AF-ZuV"/>
+                <outlet property="removeButton" destination="ffI-ME-FqC" id="GhN-eu-8Xs"/>
                 <outlet property="synopsisLabel" destination="an0-lE-iqh" id="QM8-d8-Vcj"/>
                 <outlet property="titleLabel" destination="Hkj-5M-vqA" id="AjF-In-HMc"/>
             </connections>

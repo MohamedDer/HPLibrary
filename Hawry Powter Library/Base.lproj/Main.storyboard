@@ -30,24 +30,24 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4x3-Bf-N6W">
-                                <rect key="frame" x="90" y="792" width="234" height="60"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="100" y="802" width="214" height="50"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="6lv-0a-fmO"/>
+                                    <constraint firstAttribute="height" constant="50" id="6lv-0a-fmO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="27"/>
                                 <color key="tintColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Check Cart"/>
+                                <state key="normal" title="Check Cart 📚"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uJM-6M-nD0" secondAttribute="trailing" id="76T-en-l0T"/>
                             <constraint firstItem="uJM-6M-nD0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="AaW-pQ-MWi"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4x3-Bf-N6W" secondAttribute="trailing" constant="90" id="Axr-GM-IfP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4x3-Bf-N6W" secondAttribute="trailing" constant="100" id="Axr-GM-IfP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4x3-Bf-N6W" secondAttribute="bottom" constant="10" id="ohh-Ce-xLc"/>
                             <constraint firstItem="uJM-6M-nD0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pn8-WM-cdh"/>
-                            <constraint firstItem="4x3-Bf-N6W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="90" id="qRE-WR-ubn"/>
+                            <constraint firstItem="4x3-Bf-N6W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="qRE-WR-ubn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uJM-6M-nD0" secondAttribute="bottom" id="tgz-rE-lXy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

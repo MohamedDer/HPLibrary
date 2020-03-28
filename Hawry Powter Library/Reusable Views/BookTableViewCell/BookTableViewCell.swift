@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import MBProgressHUD
 
 class BookTableViewCell: UITableViewCell {
     
@@ -16,11 +17,13 @@ class BookTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var synopsisLabel: UILabel!
     
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var removeButton: UIButton!
+    
     var book: Book?
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-//        setupCellLayouts()
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -60,4 +63,34 @@ class BookTableViewCell: UITableViewCell {
     }
     
     
+    @IBAction func addToCart(_ sender: Any) {
+        if let book = self.book {
+            AppServices.cartService.sharedCart.add(book: book)
+            showPromptWith(message: "Book added")
+
+        }
+    }
+    
+    @IBAction func removeFromCart(_ sender: Any) {
+        if let book = self.book {
+            if (AppServices.cartService.sharedCart.contains(book: book)){
+                AppServices.cartService.sharedCart.remove(book: book)
+                showPromptWith(message: "Book removed")
+            } else {
+                showPromptWith(message: "Not in cart")
+            }
+        }
+    }
+    
+    fileprivate func showPromptWith(message: String) {
+        let loader = MBProgressHUD()
+        loader.animationType = .fade
+        loader.mode = .text
+        loader.label.text = message
+        loader.show(animated: true)
+        self.addSubview(loader)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            loader.hide(animated: true)
+        }
+    }
 }
