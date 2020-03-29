@@ -35,4 +35,18 @@ class Cart {
         }
     }
     
+    func getTotalPrice() -> Float {
+        let totalPrice = self.books.reduce(0) { (book, next) -> Float in
+            return book + next.price!
+        }
+        return totalPrice
+    }
+    
+    func getQuantityOf(book: Book) -> Int {
+        let resultArray = books.filter { (cBook) -> Bool in
+            book.isbn == cBook.isbn
+        }
+        return resultArray.count
+    }
+    
 }

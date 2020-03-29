@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		63104A78242FCA7700E61A2A /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63104A77242FCA7700E61A2A /* CartViewController.swift */; };
 		63104A7A242FD2C800E61A2A /* Discount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63104A79242FD2C800E61A2A /* Discount.swift */; };
+		63104A7C2430A97A00E61A2A /* CartViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63104A7B2430A97A00E61A2A /* CartViewController+UITableView.swift */; };
+		63104A7E2430AEE700E61A2A /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63104A7D2430AEE700E61A2A /* CartTableViewCell.swift */; };
+		636FFAF32430C0F10006612A /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636FFAF22430C0F10006612A /* CartService.swift */; };
 		6371DAC6242F603600145DAB /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371DAC5242F603600145DAB /* Book.swift */; };
 		6371DAC8242F633000145DAB /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371DAC7242F633000145DAB /* Cart.swift */; };
-		6371DACA242F677E00145DAB /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371DAC9242F677D00145DAB /* CartService.swift */; };
+		6371DACA242F677E00145DAB /* DiscountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371DAC9242F677D00145DAB /* DiscountService.swift */; };
 		6371DACC242F6BC400145DAB /* BooksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371DACB242F6BC400145DAB /* BooksService.swift */; };
 		63948C55242FAE3800164C86 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63948C54242FAE3800164C86 /* AppServices.swift */; };
 		63CB4A1B242F5A40007015E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CB4A1A242F5A40007015E0 /* AppDelegate.swift */; };
@@ -30,9 +33,12 @@
 		2EA7F5D2A55B5D1BCB42FE98 /* Pods_Hawry_Powter_Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hawry_Powter_Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63104A77242FCA7700E61A2A /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		63104A79242FD2C800E61A2A /* Discount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discount.swift; sourceTree = "<group>"; };
+		63104A7B2430A97A00E61A2A /* CartViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CartViewController+UITableView.swift"; sourceTree = "<group>"; };
+		63104A7D2430AEE700E61A2A /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		636FFAF22430C0F10006612A /* CartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartService.swift; sourceTree = "<group>"; };
 		6371DAC5242F603600145DAB /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		6371DAC7242F633000145DAB /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
-		6371DAC9242F677D00145DAB /* CartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartService.swift; sourceTree = "<group>"; };
+		6371DAC9242F677D00145DAB /* DiscountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountService.swift; sourceTree = "<group>"; };
 		6371DACB242F6BC400145DAB /* BooksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksService.swift; sourceTree = "<group>"; };
 		63948C54242FAE3800164C86 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
 		63CB4A17242F5A40007015E0 /* Hawry Powter Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hawry Powter Library.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				63104A77242FCA7700E61A2A /* CartViewController.swift */,
+				63104A7B2430A97A00E61A2A /* CartViewController+UITableView.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -92,9 +99,10 @@
 		6371DAC3242F5F8500145DAB /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				6371DAC9242F677D00145DAB /* CartService.swift */,
+				6371DAC9242F677D00145DAB /* DiscountService.swift */,
 				6371DACB242F6BC400145DAB /* BooksService.swift */,
 				63948C54242FAE3800164C86 /* AppServices.swift */,
+				636FFAF22430C0F10006612A /* CartService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -147,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				63F62837242F77A600270C7B /* BookTableViewCell */,
+				63104A7D2430AEE700E61A2A /* CartTableViewCell.swift */,
 			);
 			path = "Reusable Views";
 			sourceTree = "<group>";
@@ -296,13 +305,16 @@
 				6371DAC8242F633000145DAB /* Cart.swift in Sources */,
 				6371DAC6242F603600145DAB /* Book.swift in Sources */,
 				63104A7A242FD2C800E61A2A /* Discount.swift in Sources */,
+				636FFAF32430C0F10006612A /* CartService.swift in Sources */,
 				63CB4A1F242F5A40007015E0 /* MainViewController.swift in Sources */,
 				6371DACC242F6BC400145DAB /* BooksService.swift in Sources */,
 				63F6283A242F7A4C00270C7B /* BookTableViewCell.swift in Sources */,
-				6371DACA242F677E00145DAB /* CartService.swift in Sources */,
+				6371DACA242F677E00145DAB /* DiscountService.swift in Sources */,
+				63104A7E2430AEE700E61A2A /* CartTableViewCell.swift in Sources */,
 				63CB4A1B242F5A40007015E0 /* AppDelegate.swift in Sources */,
 				63104A78242FCA7700E61A2A /* CartViewController.swift in Sources */,
 				63948C55242FAE3800164C86 /* AppServices.swift in Sources */,
+				63104A7C2430A97A00E61A2A /* CartViewController+UITableView.swift in Sources */,
 				63CB4A1D242F5A40007015E0 /* SceneDelegate.swift in Sources */,
 				63F62835242F773C00270C7B /* MainViewController+UITableView.swift in Sources */,
 			);
