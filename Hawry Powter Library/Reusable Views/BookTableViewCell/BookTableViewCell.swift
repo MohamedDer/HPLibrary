@@ -45,6 +45,8 @@ class BookTableViewCell: UITableViewCell {
         containerView.layer.cornerRadius = 5
         containerView.layer.borderWidth = 1
         containerView.layer.borderColor = UIColor.darkGray.cgColor
+        addButton.layer.cornerRadius = addButton.layer.frame.height / 2
+        removeButton.layer.cornerRadius = removeButton.layer.frame.height / 2
     }
     
     func setupCellWith(book: Book) {

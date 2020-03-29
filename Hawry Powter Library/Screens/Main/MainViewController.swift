@@ -65,7 +65,6 @@ class MainViewController: UIViewController {
                 return false
             }
         }
-        print("siir #elah")
         return true
     }
     
