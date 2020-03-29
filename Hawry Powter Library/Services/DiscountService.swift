@@ -37,7 +37,7 @@ class DiscountService {
     }
     
     
-    func getDiscounts(completion: @escaping () -> ()) {
+    func getDiscounts(completion: @escaping (_ error: Error?) -> ()) {
         let urlString = baseURLString+getURLParams()+discountsEndPoint
         AF.request(urlString , method: .get).responseJSON { (response) in
         switch response.result {
@@ -46,8 +46,9 @@ class DiscountService {
                 if let discounts = Mapper<Discount>().mapArray(JSONObject: jsonObject) {
                     self.discounts = discounts
                 }
-            completion()
+            completion(nil)
             case let .failure(error):
+                completion(error)
                 print(error.errorDescription)
             }
         }

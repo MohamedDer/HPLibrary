@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var cartButton: UIButton!
     
     var books: [Book]?
-    let loader = MBProgressHUD()
+    var loader = MBProgressHUD()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +28,16 @@ class MainViewController: UIViewController {
     
     fileprivate func loadBooks() {
         let bookservice = AppServices.booksService
-        bookservice.fetchBooks {
-            if let books = bookservice.getBooks() {
-                self.books = books
+        bookservice.fetchBooks { error in
+            if let _ = error {
+                self.showPromptWith(message: "Error while loading data. Try again later")
+            } else {
+                if let books = bookservice.getBooks() {
+                    self.books = books
+                }
+                self.updateView()
             }
-            self.updateView()
+            
         }
     }
     
@@ -69,12 +74,13 @@ class MainViewController: UIViewController {
     }
     
     fileprivate func showPromptWith(message: String) {
+        loader.hide(animated: true)
         loader.animationType = .fade
         loader.mode = .text
         loader.label.text = message
         loader.show(animated: true)
         self.view.addSubview(loader)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.loader.hide(animated: true)
         }
     }

@@ -37,7 +37,7 @@ class BooksService {
         return self.books
     }
     
-    func fetchBooks(completion : @escaping ()->())  {
+    func fetchBooks(completion : @escaping (_ error: Error? )->())  {
         AF.request(baseURLString, method: .get).responseJSON { (response) in
         switch response.result {
             case .success:
@@ -45,8 +45,9 @@ class BooksService {
                 if let books = Mapper<Book>().mapArray(JSONObject: jsonObject) {
                     self.books = books
                 }
-            completion()
+                completion(nil)
             case let .failure(error):
+                completion(error)
                 print(error.errorDescription)
             }
         }
