@@ -15,14 +15,12 @@ class MainViewController: UIViewController {
     @IBOutlet weak var cartButton: UIButton!
     
     var books: [Book]?
-     let loader = MBProgressHUD()
-    
-    
+    let loader = MBProgressHUD()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        cartButton.layer.cornerRadius = cartButton.frame.height / 2
+        setupCartButton()
         setupLoader()
         loadBooks()
         
@@ -49,6 +47,14 @@ class MainViewController: UIViewController {
     fileprivate func updateView() {
         self.tableView.reloadData()
         self.loader.hide(animated: true)
+    }
+    
+    fileprivate func setupCartButton() {
+        cartButton.layer.cornerRadius = cartButton.frame.height / 2
+        cartButton.layer.shadowColor = UIColor.black.withAlphaComponent(0.5).cgColor
+        cartButton.layer.shadowOffset = CGSize(width: 0, height: 3)
+        cartButton.layer.shadowOpacity = 1.0
+        cartButton.layer.shadowRadius = 10.0
     }
     
 
