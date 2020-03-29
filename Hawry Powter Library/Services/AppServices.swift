@@ -27,6 +27,24 @@ class AppServices {
     }
     
     
+    static fileprivate var _discountService: DiscountService?
+    static var discountService: DiscountService {
+        get {
+            if let discountService: DiscountService = AppServices._discountService {
+                return discountService
+            } else {
+                let discountService = DiscountService()
+                AppServices._discountService = discountService
+                return discountService
+            }
+        }
+        set {
+            AppServices._discountService = newValue
+        }
+    }
+    
+    
+ 
     static fileprivate var _cartService: CartService?
     static var cartService: CartService {
         get {
@@ -42,6 +60,4 @@ class AppServices {
             AppServices._cartService = newValue
         }
     }
-    
-    
 }
