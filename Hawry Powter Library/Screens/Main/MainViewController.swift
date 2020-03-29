@@ -57,6 +57,27 @@ class MainViewController: UIViewController {
         cartButton.layer.shadowRadius = 10.0
     }
     
-
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "cartSegue" {
+            if AppServices.cartService.sharedCart.books.count == 0 {
+                showPromptWith(message: "Empty cart")
+                return false
+            }
+        }
+        print("siir #elah")
+        return true
+    }
+    
+    fileprivate func showPromptWith(message: String) {
+        loader.animationType = .fade
+        loader.mode = .text
+        loader.label.text = message
+        loader.show(animated: true)
+        self.view.addSubview(loader)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.loader.hide(animated: true)
+        }
+    }
 }
 

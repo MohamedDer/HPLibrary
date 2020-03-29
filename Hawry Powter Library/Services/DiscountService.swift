@@ -22,7 +22,7 @@ class DiscountService {
     
     func getURLParams() -> String {
         if self.sharedCart.books.count == 0 {
-            return "{}"
+            return ""
         } else {
             var paramSlug = ""
             self.sharedCart.books.forEach { (book) in

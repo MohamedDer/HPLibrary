@@ -41,7 +41,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qi7-ez-89p" kind="presentation" id="rrt-DN-RBo"/>
+                                    <segue destination="qi7-ez-89p" kind="presentation" identifier="cartSegue" id="rrt-DN-RBo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -75,7 +75,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z7n-nW-F5r">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z7n-nW-F5r">
                                 <rect key="frame" x="30" y="186" width="354" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -83,29 +83,29 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cartTableViewCell" id="21h-3l-0SF" customClass="CartTableViewCell" customModule="Hawry_Powter_Library" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="354" height="87"/>
+                                        <rect key="frame" x="0.0" y="28" width="354" height="96.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="21h-3l-0SF" id="8wg-Zr-F7Q">
-                                            <rect key="frame" x="0.0" y="0.0" width="354" height="87"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="354" height="96.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="tT3-Ez-VXe">
-                                                    <rect key="frame" x="20" y="16" width="314" height="55"/>
+                                                    <rect key="frame" x="20" y="16" width="314" height="64.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbw-fB-iv0">
-                                                            <rect key="frame" x="0.0" y="0.0" width="28.5" height="55"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="28.5" height="64.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PwU-oI-l22">
-                                                            <rect key="frame" x="28.5" y="0.0" width="222.5" height="55"/>
+                                                            <rect key="frame" x="28.5" y="0.0" width="222.5" height="64.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="K6E-v6-LLp">
-                                                            <rect key="frame" x="251" y="0.0" width="63" height="55"/>
+                                                            <rect key="frame" x="251" y="0.0" width="63" height="64.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -207,14 +207,23 @@
                                     <constraint firstItem="diC-gi-oKa" firstAttribute="width" secondItem="MrM-b2-pdR" secondAttribute="width" id="rHC-oi-AbR"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cart content" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aNG-zG-mgC">
+                                <rect key="frame" x="60" y="132" width="294" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Z7n-nW-F5r" firstAttribute="leading" secondItem="S54-2B-DJv" secondAttribute="leading" constant="30" id="3hl-NV-el1"/>
+                            <constraint firstItem="Z7n-nW-F5r" firstAttribute="top" secondItem="aNG-zG-mgC" secondAttribute="bottom" constant="30" id="3va-sd-1oO"/>
                             <constraint firstItem="MrM-b2-pdR" firstAttribute="trailing" secondItem="Z7n-nW-F5r" secondAttribute="trailing" id="9q4-jb-e2r"/>
                             <constraint firstItem="Z7n-nW-F5r" firstAttribute="top" secondItem="S54-2B-DJv" secondAttribute="top" constant="130" id="DDu-pC-FMB"/>
+                            <constraint firstItem="aNG-zG-mgC" firstAttribute="leading" secondItem="S54-2B-DJv" secondAttribute="leading" constant="60" id="DJQ-ZL-7OP"/>
                             <constraint firstItem="MrM-b2-pdR" firstAttribute="leading" secondItem="Z7n-nW-F5r" secondAttribute="leading" id="E5a-r0-vEb"/>
                             <constraint firstItem="S54-2B-DJv" firstAttribute="trailing" secondItem="Z7n-nW-F5r" secondAttribute="trailing" constant="30" id="kSh-Nj-QHC"/>
+                            <constraint firstItem="S54-2B-DJv" firstAttribute="trailing" secondItem="aNG-zG-mgC" secondAttribute="trailing" constant="60" id="vyi-mZ-rQQ"/>
                             <constraint firstItem="MrM-b2-pdR" firstAttribute="top" secondItem="Z7n-nW-F5r" secondAttribute="bottom" constant="20" id="xyg-DR-Vuv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="S54-2B-DJv"/>

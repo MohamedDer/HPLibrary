@@ -90,7 +90,7 @@ class BookTableViewCell: UITableViewCell {
         loader.label.text = message
         loader.show(animated: true)
         self.addSubview(loader)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             loader.hide(animated: true)
         }
     }

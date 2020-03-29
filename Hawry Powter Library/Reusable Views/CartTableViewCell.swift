@@ -27,9 +27,10 @@ class CartTableViewCell: UITableViewCell {
     }
     
     func configureWith(book: Book) {
-        self.quantityLabel.text = "\(AppServices.cartService.sharedCart.getQuantityOf(book: book))"
+        let quantity = AppServices.cartService.sharedCart.getQuantityOf(book: book)
+        self.quantityLabel.text = "\(quantity)"
         self.titleLabel.text = "\(book.title ?? "")"
-        self.priceLabel.text = "\(book.price ?? 0) £"
+        self.priceLabel.text = "\((book.price ?? 0) * Float(quantity) ) £"
         self.selectionStyle = .none
     }
 
