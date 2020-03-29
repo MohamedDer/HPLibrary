@@ -18,8 +18,8 @@ class Discount: Mappable {
     }
     
     var type: DiscountType?
-    var value: Int?
-    var sliceValue: Int?
+    var value: Float?
+    var sliceValue: Float?
     
     func mapping(map: Map) {
         type    <- map["type"]

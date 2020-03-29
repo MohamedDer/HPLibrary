@@ -69,16 +69,7 @@ class BookTableViewCell: UITableViewCell {
         if let book = self.book {
             AppServices.cartService.sharedCart.add(book: book)
             showPromptWith(message: "Book added")
-
         }
-        
-        //
-        
-         AppServices.cartService.getDiscounts {
-            let ds = AppServices.cartService.discounts
-            print(ds)
-        }
-        
     }
     
     @IBAction func removeFromCart(_ sender: Any) {

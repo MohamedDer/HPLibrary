@@ -14,7 +14,7 @@ class Book: Mappable {
     
     var isbn: String?
     var title: String?
-    var price: Int?
+    var price: Float?
     var coverURLString: String?
     var synopsis: [String]?
 

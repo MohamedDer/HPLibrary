@@ -38,14 +38,14 @@ class CartService {
         if self.sharedCart.books.count == 0 {
             return "{}"
         } else {
-            var paramSlug = "{"
+            var paramSlug = ""
             self.sharedCart.books.forEach { (book) in
                 if let bookIsbn = book.isbn {
                     paramSlug += "\(bookIsbn),"
                 }
             }
             paramSlug.removeLast()
-            paramSlug += "}/"
+            paramSlug += "/"
             return paramSlug
         }
     }
@@ -53,14 +53,12 @@ class CartService {
     
     func getDiscounts(completion: @escaping () -> ()) {
         let urlString = baseURLString+getURLParams()+discountsEndPoint
-        let safeURL = urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
-        AF.request(safeURL! , method: .get).validate().responseJSON { (response) in
+        AF.request(urlString , method: .get).responseJSON { (response) in
         switch response.result {
             case .success:
                 let jsonObject = (response.value as? [String:Any])?["offers"]
                 if let discounts = Mapper<Discount>().mapArray(JSONObject: jsonObject) {
                     self.discounts = discounts
-                    self.getBestDiscountValue()
                 }
             completion()
             case let .failure(error):
@@ -70,39 +68,43 @@ class CartService {
     }
     
     func getDiscountValue (of discount: Discount) -> Float {
-        let totalPrice = AppServices.cartService.sharedCart.books.reduce(0) { (book, next) -> Int in
+        let totalPrice = AppServices.cartService.sharedCart.books.reduce(0) { (book, next) -> Float in
             return book + next.price!
         }
         var discountPrice: Float = 0
 
         switch discount.type! {
             case .percentage:
-                discountPrice = Float(totalPrice * discount.value! / 100)
+                discountPrice = totalPrice * discount.value! / 100
                 break;
             case .minus:
-                discountPrice = Float(totalPrice - discount.value!)
+                discountPrice = discount.value!
                 break;
             case .slice:
                 if ( totalPrice >= discount.sliceValue! ) {
-                    discountPrice = Float(totalPrice - discount.value!)
+                    discountPrice = discount.value!
                 }
                 break;
         }
-        print("\(totalPrice)  discount val \(discountPrice)  with \(discount.type!)")
-
         return discountPrice
     }
     
     func getBestDiscountValue() -> Float {
         var bestDiscountValue: Float = 0
         self.discounts?.forEach({ (discount) in
-            print(self.getDiscountValue(of: discount))
             if ( self.getDiscountValue(of: discount) >= bestDiscountValue) {
                 bestDiscountValue = self.getDiscountValue(of: discount)
             }
         })
-        print("best dis \(bestDiscountValue)")
         return bestDiscountValue
+    }
+    
+    func getBestFinalPrice() -> Float {
+        let totalPrice = AppServices.cartService.sharedCart.books.reduce(0) { (book, next) -> Float in
+            return book + next.price!
+        }
+       return totalPrice - getBestDiscountValue()
+        
     }
     
 }
