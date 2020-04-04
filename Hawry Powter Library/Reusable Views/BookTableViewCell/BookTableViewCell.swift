@@ -6,31 +6,30 @@
 //  Copyright © 2020 Mohamed Derkaoui. All rights reserved.
 //
 
-import UIKit
 import Kingfisher
 import MBProgressHUD
+import UIKit
 
 class BookTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var coverImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var synopsisLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    
-    @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var removeButton: UIButton!
-    
+    @IBOutlet var containerView: UIView!
+    @IBOutlet var coverImageView: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var synopsisLabel: UILabel!
+    @IBOutlet var priceLabel: UILabel!
+
+    @IBOutlet var addButton: UIButton!
+    @IBOutlet var removeButton: UIButton!
+
     var book: Book?
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         setupCellLayouts()
@@ -38,9 +37,8 @@ class BookTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
-    
+
     func setupCellLayouts() {
         containerView.layer.cornerRadius = 5
         containerView.layer.borderWidth = 1
@@ -48,50 +46,52 @@ class BookTableViewCell: UITableViewCell {
         addButton.layer.cornerRadius = addButton.layer.frame.height / 2
         removeButton.layer.cornerRadius = removeButton.layer.frame.height / 2
     }
-    
+
     func setupCellWith(book: Book) {
         self.book = book
         synopsisLabel.text = book.synopsis?.first
         titleLabel.text = book.title
-        priceLabel.text = "\(book.price!) £"
+        if let price =  book.price {
+            priceLabel.text = "\(price) £"
+        }
         if let urlString = book.coverURLString {
             setupImageWith(URLString: urlString)
         }
     }
-    
-    func setupImageWith(URLString: String)  {
+
+    func setupImageWith(URLString: String) {
         let url = URL(string: URLString)
         if let url = url {
             coverImageView.kf.setImage(with: url)
         }
     }
-    
-    
-    @IBAction func addToCart(_ sender: Any) {
+
+    @IBAction func addToCart(_: Any) {
         if let book = self.book {
-            AppServices.cartService.sharedCart.add(book: book)
+            CartService.shared.add(book: book)
             showPromptWith(message: "Book added")
         }
     }
-    
-    @IBAction func removeFromCart(_ sender: Any) {
+
+    @IBAction func removeFromCart(_: Any) {
         if let book = self.book {
-            if (AppServices.cartService.sharedCart.contains(book: book)){
-                AppServices.cartService.sharedCart.remove(book: book)
+            if CartService.shared.contains(book: book) {
+                CartService.shared.remove(book: book)
                 showPromptWith(message: "Book removed")
-            } else {
+            }
+            else {
                 showPromptWith(message: "Not in cart")
             }
         }
     }
-    
+
     fileprivate func showPromptWith(message: String) {
         let loader = MBProgressHUD()
         loader.animationType = .fade
         loader.mode = .text
         loader.label.text = message
         loader.show(animated: true)
-        self.addSubview(loader)
+        addSubview(loader)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             loader.hide(animated: true)
         }

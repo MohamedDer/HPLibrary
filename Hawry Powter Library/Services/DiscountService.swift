@@ -6,26 +6,25 @@
 //  Copyright © 2020 Mohamed Derkaoui. All rights reserved.
 //
 
-import Foundation
 import Alamofire
+import Foundation
 import ObjectMapper
 
-
 class DiscountService {
-    
     let baseURLString = "http://henri-potier.xebia.fr/books/"
     let discountsEndPoint = "commercialOffers"
-    
+
     var discounts: [Discount]?
 
-    var sharedCart = AppServices.cartService.sharedCart
-    
+    var sharedCart = CartService.shared
+
     func getURLParams() -> String {
-        if self.sharedCart.books.count == 0 {
+        if sharedCart.books.isEmpty {
             return ""
-        } else {
+        }
+        else {
             var paramSlug = ""
-            self.sharedCart.books.forEach { (book) in
+            sharedCart.books.forEach { book in
                 if let bookIsbn = book.isbn {
                     paramSlug += "\(bookIsbn),"
                 }
@@ -35,58 +34,55 @@ class DiscountService {
             return paramSlug
         }
     }
-    
-    
-    func getDiscounts(completion: @escaping (_ error: Error?) -> ()) {
-        let urlString = baseURLString+getURLParams()+discountsEndPoint
-        AF.request(urlString , method: .get).responseJSON { (response) in
-        switch response.result {
+
+    func getDiscounts(completion: @escaping (_ error: Error?) -> Void) {
+        let urlString = baseURLString + getURLParams() + discountsEndPoint
+        AF.request(urlString, method: .get).responseJSON { response in
+            switch response.result {
             case .success:
-                let jsonObject = (response.value as? [String:Any])?["offers"]
+                let jsonObject = (response.value as? [String: Any])?["offers"]
                 if let discounts = Mapper<Discount>().mapArray(JSONObject: jsonObject) {
                     self.discounts = discounts
                 }
-            completion(nil)
+                completion(nil)
             case let .failure(error):
                 completion(error)
                 print(error.errorDescription)
             }
         }
     }
-    
-    func getDiscountValue (of discount: Discount) -> Float {
+
+    func getDiscountValue(of discount: Discount) -> Float {
         let totalPrice = sharedCart.getTotalPrice()
         var discountPrice: Float = 0
-
-        switch discount.type! {
+        if let discountType = discount.type, let discountValue = discount.value {
+            switch discountType {
             case .percentage:
-                discountPrice = totalPrice * discount.value! / 100
-                break;
+                discountPrice = totalPrice * discountValue / 100
             case .minus:
-                discountPrice = discount.value!
-                break;
+                discountPrice = discountValue
             case .slice:
-                if ( totalPrice >= discount.sliceValue! ) {
-                    discountPrice = discount.value!
+                if let discountSlice = discount.sliceValue {
+                    if totalPrice >= discountSlice {
+                        discountPrice = discountValue
+                    }
                 }
-                break;
+            }
         }
         return discountPrice
     }
-    
+
     func getBestDiscountValue() -> Float {
         var bestDiscountValue: Float = 0
-        self.discounts?.forEach({ (discount) in
-            if ( self.getDiscountValue(of: discount) >= bestDiscountValue) {
+        discounts?.forEach { discount in
+            if self.getDiscountValue(of: discount) >= bestDiscountValue {
                 bestDiscountValue = self.getDiscountValue(of: discount)
             }
-        })
+        }
         return bestDiscountValue
     }
-    
+
     func getBestFinalPrice() -> Float {
         return sharedCart.getTotalPrice() - getBestDiscountValue()
     }
-    
-    
 }

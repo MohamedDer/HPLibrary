@@ -9,12 +9,10 @@
 import UIKit
 
 class CartTableViewCell: UITableViewCell {
+    @IBOutlet var quantityLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var priceLabel: UILabel!
 
-    @IBOutlet weak var quantityLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,13 +23,12 @@ class CartTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    func configureWith(book: Book) {
-        let quantity = AppServices.cartService.sharedCart.getQuantityOf(book: book)
-        self.quantityLabel.text = "\(quantity)"
-        self.titleLabel.text = "\(book.title ?? "")"
-        self.priceLabel.text = "\((book.price ?? 0) * Float(quantity) ) £"
-        self.selectionStyle = .none
-    }
 
+    func configureWith(book: Book) {
+        let quantity = CartService.shared.getQuantityOf(book: book)
+        quantityLabel.text = "\(quantity)"
+        titleLabel.text = "\(book.title ?? "")"
+        priceLabel.text = "\((book.price ?? 0) * Float(quantity)) £"
+        selectionStyle = .none
+    }
 }

@@ -1,0 +1,48 @@
+disabled_rules: # rule identifiers to exclude from running
+  - todo
+  - nesting
+opt_in_rules: # some rules are only opt-in
+  - empty_count
+  - force_unwrapping
+
+included:
+  - Hawry Powter Library
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Pods
+  - Vendor
+  - build
+
+
+# configurable rules can be customized from this configuration file
+# binary rules can set their severity level
+force_cast: error
+force_try: error
+force_unwrapping: error
+
+statement_position:
+   statement_mode: uncuddled_else
+line_length:
+  warning: 130
+file_length:
+  warning: 900
+type_name:
+  max_length:
+    warning: 55
+    error: 60
+  min_length:
+    error: 3
+  excluded:
+    - iPhone
+    - iPad
+type_body_length:
+   warning: 300
+   error: 900
+function_body_length:
+   warning: 50
+   error: 100
+function_parameter_count:
+   warning: 6
+   error: 8
+cyclomatic_complexity:
+   warning: 12
+   error: 20

@@ -9,13 +9,13 @@
 import Foundation
 
 class AppServices {
-
-    static fileprivate var _booksService: BooksService?
+    fileprivate static var _booksService: BooksService?
     static var booksService: BooksService {
         get {
             if let booksService: BooksService = AppServices._booksService {
                 return booksService
-            } else {
+            }
+            else {
                 let booksService = BooksService()
                 AppServices._booksService = booksService
                 return booksService
@@ -25,14 +25,14 @@ class AppServices {
             AppServices._booksService = newValue
         }
     }
-    
-    
-    static fileprivate var _discountService: DiscountService?
+
+    fileprivate static var _discountService: DiscountService?
     static var discountService: DiscountService {
         get {
             if let discountService: DiscountService = AppServices._discountService {
                 return discountService
-            } else {
+            }
+            else {
                 let discountService = DiscountService()
                 AppServices._discountService = discountService
                 return discountService
@@ -40,24 +40,6 @@ class AppServices {
         }
         set {
             AppServices._discountService = newValue
-        }
-    }
-    
-    
- 
-    static fileprivate var _cartService: CartService?
-    static var cartService: CartService {
-        get {
-            if let cartService: CartService = AppServices._cartService {
-                return cartService
-            } else {
-                let cartService = CartService()
-                AppServices._cartService = cartService
-                return cartService
-            }
-        }
-        set {
-            AppServices._cartService = newValue
         }
     }
 }

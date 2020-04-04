@@ -5,12 +5,14 @@ PODS:
   - Kingfisher/Core (5.13.1)
   - MBProgressHUD (1.2.0)
   - ObjectMapper (3.5.1)
+  - SwiftLint (0.39.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0)
   - Kingfisher
   - MBProgressHUD (~> 1.2.0)
   - ObjectMapper
+  - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -18,13 +20,15 @@ SPEC REPOS:
     - Kingfisher
     - MBProgressHUD
     - ObjectMapper
+    - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: 58ff2bfb8daaacaa233d5c36e37b10a5248f59b1
   Kingfisher: f33a848445e33c543620812158dc5d47f6bf90df
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
+  SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: be4817e42454c9120658013f17b473646edd2813
+PODFILE CHECKSUM: c9b466ec07ea1386a5354498ab5e34e3b3790c94
 
 COCOAPODS: 1.7.5

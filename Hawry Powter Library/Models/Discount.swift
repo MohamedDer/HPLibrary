@@ -10,23 +10,21 @@ import Foundation
 import ObjectMapper
 
 class Discount: Mappable {
-    
     enum DiscountType: String {
-        case percentage = "percentage"
-        case minus = "minus"
-        case slice = "slice"
+        case percentage
+        case minus
+        case slice
     }
-    
+
     var type: DiscountType?
     var value: Float?
     var sliceValue: Float?
-    
+
     func mapping(map: Map) {
-        type    <- map["type"]
-        value    <- map["value"]
-        sliceValue    <- map["sliceValue"]
+        type <- map["type"]
+        value <- map["value"]
+        sliceValue <- map["sliceValue"]
     }
 
-    required init?(map: Map) {
-    }
+    required init?(map _: Map) {}
 }

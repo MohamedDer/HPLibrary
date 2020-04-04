@@ -12,6 +12,8 @@ target 'Hawry Powter Library' do
     # Utils
     pod 'ObjectMapper'
     pod 'MBProgressHUD', '~> 1.2.0'
+    pod 'SwiftLint'
+
 
 
 end

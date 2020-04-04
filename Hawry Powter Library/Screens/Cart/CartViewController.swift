@@ -6,61 +6,59 @@
 //  Copyright © 2020 Mohamed Derkaoui. All rights reserved.
 //
 
-import UIKit
 import MBProgressHUD
-
+import UIKit
 
 class CartViewController: UIViewController {
+    @IBOutlet var tableView: UITableView!
 
-    @IBOutlet weak var tableView: UITableView!
-    
-    @IBOutlet weak var totalPriceLabel: UILabel!
-    @IBOutlet weak var bestDiscountLabel: UILabel!
-    @IBOutlet weak var finalPriceLabel: UILabel!
-   
+    @IBOutlet var totalPriceLabel: UILabel!
+    @IBOutlet var bestDiscountLabel: UILabel!
+    @IBOutlet var finalPriceLabel: UILabel!
+
     var books: [Book]?
     var totalPrice: Float?
     var bestDiscountValue: Float?
     var finalPrice: Float?
     var loader = MBProgressHUD()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         AppServices.discountService.getDiscounts { error in
-            if let _ = error {
+            if error != nil {
                 self.showPromptWith(message: "Error loading cart. Try again later.")
-            } else {
-                self.books = AppServices.cartService.sharedCart.books
+            }
+            else {
+                self.books = CartService.shared.books
                 self.removeRedendancy()
-                self.totalPrice = AppServices.cartService.sharedCart.getTotalPrice()
+                self.totalPrice = CartService.shared.getTotalPrice()
                 self.bestDiscountValue = AppServices.discountService.getBestDiscountValue()
                 self.finalPrice = AppServices.discountService.getBestFinalPrice()
                 self.updateViewData()
             }
         }
-
     }
-    
+
     fileprivate func updateViewData() {
         tableView.reloadData()
-        if let totalPrice = self.totalPrice, let bestDiscount = self.bestDiscountValue, let finalPrice = self.finalPrice {
+        if let totalPrice = self.totalPrice, let bestDiscount = bestDiscountValue, let finalPrice = self.finalPrice {
             totalPriceLabel.text = "\(totalPrice) £"
             bestDiscountLabel.text = "\(bestDiscount) £"
             finalPriceLabel.text = "\(finalPrice) £"
         }
     }
-    
+
     func removeRedendancy() {
         let filteredCart: Cart = Cart()
         if let books = books {
-            books.forEach { (cBook) in
-                if (!filteredCart.contains(book: cBook)) {
+            books.forEach { cBook in
+                if !filteredCart.contains(book: cBook) {
                     filteredCart.books.append(cBook)
                 }
             }
         }
-        self.books = filteredCart.books
+        books = filteredCart.books
     }
 
     fileprivate func showPromptWith(message: String) {
@@ -69,7 +67,7 @@ class CartViewController: UIViewController {
         loader.mode = .text
         loader.label.text = message
         loader.show(animated: true)
-        self.tableView.addSubview(loader)
+        tableView.addSubview(loader)
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.loader.hide(animated: true)
         }

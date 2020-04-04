@@ -9,25 +9,20 @@
 import Foundation
 import ObjectMapper
 
-
 class Book: Mappable {
-    
     var isbn: String?
     var title: String?
     var price: Float?
     var coverURLString: String?
     var synopsis: [String]?
 
-    
     func mapping(map: Map) {
-        isbn    <- map["isbn"]
-        title    <- map["title"]
-        price    <- map["price"]
-        coverURLString    <- map["cover"]
-        synopsis    <- map["synopsis"]
+        isbn <- map["isbn"]
+        title <- map["title"]
+        price <- map["price"]
+        coverURLString <- map["cover"]
+        synopsis <- map["synopsis"]
     }
 
-    required init?(map: Map) {
-    }
-
+    required init?(map _: Map) {}
 }

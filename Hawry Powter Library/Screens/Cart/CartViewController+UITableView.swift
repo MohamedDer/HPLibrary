@@ -9,30 +9,25 @@
 import Foundation
 import UIKit
 
-
 extension CartViewController: UITableViewDelegate, UITableViewDataSource {
-     
     func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return books?.count ?? 0
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cartTableViewCell", for: indexPath) as? CartTableViewCell {
             if let books = self.books {
                 cell.configureWith(book: books[indexPath.row])
                 return cell
-                }
             }
-            
+        }
+
         return UITableViewCell()
     }
-    
-    
-    
 }

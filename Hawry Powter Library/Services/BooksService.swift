@@ -6,20 +6,20 @@
 //  Copyright © 2020 Mohamed Derkaoui. All rights reserved.
 //
 
-import Foundation
 import Alamofire
+import Foundation
 import ObjectMapper
 
 class BooksService {
-    
     let baseURLString = "http://henri-potier.xebia.fr/books"
-    
+
     fileprivate var _sharedBookService: BooksService?
     public var sharedBooksService: BooksService {
         get {
             if let shared = _sharedBookService {
                 return shared
-            } else {
+            }
+            else {
                 let shared = BooksService()
                 _sharedBookService = shared
                 return shared
@@ -29,17 +29,18 @@ class BooksService {
             _sharedBookService = newValue
         }
     }
-    
+
     fileprivate var books: [Book]?
 
-    //MARK: Utils
+    // MARK: Utils
+
     func getBooks() -> [Book]? {
-        return self.books
+        return books
     }
-    
-    func fetchBooks(completion : @escaping (_ error: Error? )->())  {
-        AF.request(baseURLString, method: .get).responseJSON { (response) in
-        switch response.result {
+
+    func fetchBooks(completion: @escaping (_ error: Error?) -> Void) {
+        AF.request(baseURLString, method: .get).responseJSON { response in
+            switch response.result {
             case .success:
                 let jsonObject = (response.value as? [Any])
                 if let books = Mapper<Book>().mapArray(JSONObject: jsonObject) {

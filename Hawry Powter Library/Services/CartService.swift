@@ -8,25 +8,8 @@
 
 import Foundation
 
-
 class CartService {
-    
-    fileprivate var _sharedCart : Cart?
-    public var sharedCart: Cart {
-        get {
-            if let shared = self._sharedCart {
-                 return shared
-            } else {
-                let shared = Cart()
-                self._sharedCart = shared
-                return  shared
-            }
-        }
-        set {
-           _sharedCart = newValue
-        }
-    }
-    
-    
-    
+    public static let shared = Cart()
+
+    private init() {}
 }
